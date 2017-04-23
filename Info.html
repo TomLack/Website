@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<title> Info Page </title>
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="http://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body style="background-color:gray;">
+<div class="w3-row">
+	<div class="w3-col l12 w3-black w3-center"><h1>My Website</h1></div>
+</div>
+<div class="w3-row">
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="index.html"><p>Home</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="App.html"><p>Projects</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Info.html"><p>Info</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Notes.html"><p>Notes</p></a></div>
+</div>
+<div class="w3-row w3-black w3-center">
+	<div class="w3-col l6  w3-center">
+	<p onclick="w3.toggleShow('#Form')">Toggle Form</p> </div>
+	<div class="w3-col l6  w3-center">
+	<p onclick="w3.toggleShow('#Contact')">Toggle Contact Info</p></div>
+</div>	
+<div class="w3-row">
+	<div id = "Form" class="w3-col l6 w3-gray w3-text-black w3-center w3-left"> <p>Contact Form</p> <br> 
+	<form action="mailto:11heslopj@nhgs.calderdale.sch.uk" method="post" enctype="text/plain">
+	First name:<br>
+	<input type="text" name="firstname"><br>
+	Last name:<br>
+	<input type="text" name="lastname"><br>
+	E-Mail:<br>
+	<input type="text" name="E-mail"><br>
+	<input type="submit" value="Submit">
+	</form></div>
+	<div  id = "Contact" class="w3-col l6 w3-grey w3-text-black w3-center w3-right"> <p>Contact Info<br>E-Mail: 11heslopj@nhgs.calderdale.sch.uk<br>Phone:<br><br><br><br><br><br><br><br></p></div>
+</div>
+</body>
+</html>

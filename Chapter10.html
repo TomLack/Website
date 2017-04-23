@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<script language='javascript'>
+function hide(){
+   document.getElementById('PC').style.display = "none";
+   document.getElementById('ACC').style.display = "none";
+   document.getElementById('MAR').style.display = "none";
+   document.getElementById('MDR').style.display = "none";
+   document.getElementById('CIR').style.display = "none";
+   document.getElementById('CU').style.display = "none";
+   document.getElementById('ALU').style.display = "none";
+   document.getElementById('Busses').style.display = "none";
+}
+</script>
+<title> Chapter 10 </title>
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="http://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body style="background-color:gray;">
+<div class="w3-row">
+	<div class="w3-col l12 w3-black w3-center"><h1>My Website</h1></div>
+</div>
+<div class="w3-row">
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="index.html"><p>Home</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="App.html"><p>Projects</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Info.html"><p>Info</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Notes.html"><p>Notes</p></a></div>
+</div>
+<div class="w3-row">
+	<div class="w3-col l6 w3-black w3-center">
+		<h2> The CPU </h2>
+		<h4> The CPU is composed of multiple units and registers all connected by busses. The componants are:</h4>
+		<p onclick="w3.show('#PC');w3.hide('#ACC');w3.hide('#MAR');w3.hide('#MDR');w3.hide('#CIR');w3.hide('#CU');w3.hide('#ALU');w3.hide('#Busses')">PC</p> 
+		<p onclick="w3.show('#ACC');w3.hide('#PC');w3.hide('#MAR');w3.hide('#MDR');w3.hide('#CIR');w3.hide('#CU');w3.hide('#ALU');w3.hide('#Busses')">ACC</p>
+		<p onclick="w3.show('#MAR');w3.hide('#ACC');w3.hide('#PC');w3.hide('#MDR');w3.hide('#CIR');w3.hide('#CU');w3.hide('#ALU');w3.hide('#Busses')">MAR</p>
+		<p onclick="w3.show('#MDR');w3.hide('#ACC');w3.hide('#MAR');w3.hide('#PC');w3.hide('#CIR');w3.hide('#CU');w3.hide('#ALU');w3.hide('#Busses')">MDR</p>
+		<p onclick="w3.show('#CIR');w3.hide('#ACC');w3.hide('#MAR');w3.hide('#MDR');w3.hide('#PC');w3.hide('#CU');w3.hide('#ALU');w3.hide('#Busses')">CIR</p>
+		<p onclick="w3.show('#CU');w3.hide('#ACC');w3.hide('#MAR');w3.hide('#MDR');w3.hide('#CIR');w3.hide('#PC');w3.hide('#ALU');w3.hide('#Busses')">CU</p>
+		<p onclick="w3.show('#ALU');w3.hide('#ACC');w3.hide('#MAR');w3.hide('#MDR');w3.hide('#CIR');w3.hide('#CU');w3.hide('#PC');w3.hide('#Busses')">ALU</p>
+		<p onclick="w3.show('#Busses');w3.hide('#ACC');w3.hide('#MAR');w3.hide('#MDR');w3.hide('#CIR');w3.hide('#CU');w3.hide('#ALU');w3.hide('#PC')">Busses</p>
+	</div>
+	<div class="Content">
+		<div   id = "PC" class="w3-col l6 w3-black w3-center"><h2>Program Counter</h2><p>The Program Counter keeps track of which instruction the computer is currently using, therefore most cycles start here.</p></div>
+		<div   id = "ACC" class="w3-col l6 w3-black w3-center"><h2>Accumulator</h2><p>The accumulator stores the results gained in the ALU.</p></div>
+		<div   id = "MAR" class="w3-col l6 w3-black w3-center"><h2>Memory Address Register</h2><p>The Memory Address Register is where all the memory locations for different pieces of data are stored.</p></div>
+		<div   id = "MDR" class="w3-col l6 w3-black w3-center"><h2>Memory Data Register</h2><p>The Memory Data Register is where the data that is about to be stored in memory is kept.</p></div>
+		<div   id = "CIR" class="w3-col l6 w3-black w3-center"><h2>Current Instruction Register</h2><p>The Current Instruction Register is where the instruction currently being used is stored.</p></div>
+		<div   id = "CU" class="w3-col l6 w3-black w3-center"><h2>Control Unit</h2><p>The Control Unit tells each of the units and registers how to behave to certain instructions. It would tell the ALU what calculations to do when given a specific instruction or would tell the MAR which address is needed.</p></div>
+		<div   id = "ALU" class="w3-col l6 w3-black w3-center"><h2>Arithmatic Logic Unit</h2><p>The Arithmatic Logic Unit is used to perform all of the calculations needed in the computer and all of the logic decisions. During every instruction there is probably at least one visit here by the data.</p></div>
+		<div   id = "Busses" class="w3-col l6 w3-black w3-center"><h2>Busses</h2><p>Busses are the small metal plates that carry data around the computer. In the CPU they are mainly used to carry thing between all the registers and units.<br> There are different kinds of busses:<br>Control Bus<br>Data Bus<br>Address Bus</p></div>
+
+	</div>
+</div>
+<script>
+window.onload=hide ;
+</script>
+</body>
+</html>

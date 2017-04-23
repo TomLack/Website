@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<title> Chapter 5 </title>
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="http://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body style="background-color:gray;">
+<div class="w3-row">
+	<div class="w3-col l12 w3-black w3-center"><h1>My Website</h1></div>
+</div>
+<div class="w3-row">
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="index.html"><p>Home</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="App.html"><p>Projects</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Info.html"><p>Info</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Notes.html"><p>Notes</p></a></div>
+</div>
+<div class="w3-col l12 w3-black w3-center"><p>Chapter 5 Notes</p> 
+	<table class="w3-table" id="Grades">
+	<tr>
+		<th onclick="sortTable(0)">Sub-Chapter</th>
+		<th onclick="sortTable(1)">Topic</th>
+		<th onclick="sortTable(2)">Link</th>
+	</tr>
+	<tr>
+		<td>5.1</td>
+		<td>Linear Search</td>
+		<td><a href="https://docs.google.com/document/d/1uoN4sQO8Bq1Uz3lqcCO6Ppr287TgeJsjBM8LgrscZKM/edit">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>5.2</td>
+		<td>Binary Search</td>
+		<td><a href="https://docs.google.com/document/d/1-mr9FHNUbm8XrvSOhdI6TChA6L3dpraX9TXCEpSuWbA/edit">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>5.3</td>
+		<td>Bubble Sort</td>
+		<td><a href="https://docs.google.com/document/d/1jG3Gq-qQuiVE91C8xi5flNAAlmCTltkYAzCcT1knpXw/edit">Google Docs<a/></td>
+	</tr>
+	<tr>
+		<td>5.4</td>
+		<td>Insertion Sort</td>
+		<td><a href="https://docs.google.com/document/d/1NotJFVFgQs6roh8InvuRgqnySDRXqFODbLkGjTXZWKY/edit">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>5.5</td>
+		<td>Merge Sort</td>
+		<td><a href="https://docs.google.com/document/d/1X6xnXLxh3HI7n0S1KP6k8LQxvRB48pEZCGV1spZOEFI/edit">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>5.6</td>
+		<td>Quick Sort</td>
+		<td><a href="https://docs.google.com/document/d/1f42yMpQQkCm0hDZFYgvVyuqtG8kjIN8ALJkZRlcdhUY/edit">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>5.7</td>
+		<td>Complexity</td>
+		<td><a href="https://docs.google.com/document/d/1NXZkw69XiL1XSVamJIhneS2xGDFHAZQr19R23b7sL4g/edit">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>5.8</td>
+		<td>Dijkstra's Algorithm</td>
+		<td><a href="https://docs.google.com/presentation/d/1Lz_CbaWmnSlSvrcq4Lpb9qUGMzYKp35MKEcGDZ5cUvM/edit#slide=id.p">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>5.9</td>
+		<td>A* Shortest Path</td>
+		<td><a href="https://docs.google.com/presentation/d/1ky0w8e5dnARiJ73y8r5KQRH9DMzW3xvwK20Z4ucjjvU/edit#slide=id.p">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>Report</td>
+		<td><a href="https://docs.google.com/document/d/1SB2-2evoA0WGQymCXH50PL1KRvlHkq7_zdZu2nlwAkU/edit">Google Docs</a></td>
+	</tr>
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("Grades");
+  switching = true;
+
+  dir = "asc"; 
+
+  while (switching) {
+
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+   
+      switchcount ++;      
+    } else {
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<title> Home Page </title>
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="http://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body style="background-color:gray;">
+<div class="w3-row">
+	<div class="w3-col l12 w3-black w3-center"><h1>My Website</h1></div>
+</div>
+<div class="w3-row">
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="index.html"><p>Home</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="App.html"><p>Projects</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Info.html"><p>Info</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Notes.html"><p>Notes</p></a></div>
+</div>
+<div class="w3-row">
+  <div class="w3-col l6 w3-black w3-center"><p>About Me</p> </div>
+  <div class="w3-col l6 w3-black w3-center"><p>Exam Results</p> 
+	<table class="w3-table" id="Grades">
+	<tr>
+		<th onclick="sortTable(0)">Subject</th>
+		<th onclick="sortTable(1)">Level</th>
+		<th onclick="sortTable(2)">Grade</th>
+	</tr>
+	<tr>
+		<td>English Language</td>
+		<td>GCSE</td>
+		<td>A</td>
+	</tr>
+	<tr>
+		<td>Maths</td>
+		<td>GCSE</td>
+		<td>A</td>
+	</tr>
+	<tr>
+		<td>Computing</td>
+		<td>GCSE</td>
+		<td>A</td>
+	</tr>
+	<tr>
+		<td>ICT</td>
+		<td>GCSE</td>
+		<td>B</td>
+	</tr>
+	<tr>
+		<td>German</td>
+		<td>GCSE</td>
+		<td>B</td>
+	</tr>
+	<tr>
+		<td>Religious Education</td>
+		<td>GCSE</td>
+		<td>C</td>
+	</tr>
+	<tr>
+		<td>Physics</td>
+		<td>GCSE</td>
+		<td>B</td>
+	</tr>
+	<tr>
+		<td>Computing</td>
+		<td>A-Level</td>
+		<td>Ongoing</td>
+	</tr>
+	<tr>
+		<td>Electronics</td>
+		<td>A-Level</td>
+		<td>Ongoing</td>
+	</tr>
+	<tr>
+		<td>Business</td>
+		<td>A-Level</td>
+		<td>Ongoing</td>
+	</tr>
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("Grades");
+  switching = true;
+
+  dir = "asc"; 
+
+  while (switching) {
+
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+   
+      switchcount ++;      
+    } else {
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+</div>
+</div>
+</body>
+</html>

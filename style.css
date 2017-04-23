@@ -1,0 +1,34 @@
+body {
+    background-color: #ffffff;
+}
+h1{
+	color: #ffffff;
+}
+h2{
+	color: #ffffff;
+}
+p{
+	color: #ffffff;
+}
+div.Main_Text{ 
+	max-width: 500px;
+    border: 10px solid blue;
+	border-style: groove;
+    padding: 5px;
+    margin: 5px;
+	background-color: #0000cc;
+}
+div.Heading{
+	max-width: 500px;
+    border: 10px solid blue;
+    padding: 5px;
+    margin: 5px;
+	background-color: #0000cc;
+}
+div.SubHeading{
+	max-width: 500px;
+    border: 10px solid blue;
+    padding: 5px;
+    margin: 5px;
+	background-color: #0000cc;
+}

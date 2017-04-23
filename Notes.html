@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<title> Notes Page </title>
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="http://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body style="background-color:gray;">
+<div class="w3-row">
+	<div class="w3-col l12 w3-black w3-center"><h1>My Website</h1></div>
+</div>
+<div class="w3-row">
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="index.html"><p>Home</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="App.html"><p>Projects</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Info.html"><p>Info</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Notes.html"><p>Notes</p></a></div>
+</div>
+<div class="w3-col l12 w3-black w3-center"><p>Notes</p> 
+	<table class="w3-table" id="Grades">
+	<tr>
+		<th onclick="sortTable(0)">Chapter</th>
+		<th onclick="sortTable(1)">Topic</th>
+		<th onclick="sortTable(2)">Link</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>Computational Thinking</td>
+		<td><a href="https://docs.google.com/document/d/1X-Wr0_KaBMfpaFL2afdHm-9wxHa23sal2llVifTN8MY/edit">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>Elements of Computational Thinking</td>
+		<td><a href="https://docs.google.com/document/d/1jqUxzN_bKO3Wq0XVbuesm7OFqlq4f5RKWJNjY9NvPzc/edit">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>Problem Solving</td>
+		<td><a href="https://docs.google.com/document/d/1P53gnnhb6xVaYvbqpNAb3lfiGJt0_QExf-iE2dw6GFc/edit">Google Docs<a/></td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>Programming Techniques</td>
+		<td><a href="https://docs.google.com/document/d/10aFqFEhdZTj1_v9ox_EIfpKHAlxsykzBv626G-khiOo/edit">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>Searching and Sorting Algorithms</td>
+		<td><a href="Chapter5.html">Chapter 5</a></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>Different Programming Languages</td>
+		<td><a href="https://docs.google.com/document/d/1J1weyn9awmom_LdUok31BMnG_OE6-Rlz0GJFOnbR8ZQ/edit">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td>Software and Memory Management</td>
+		<td><a href="Chapter7.html">Chapter 7</a></td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td>Applications Generation</td>
+		<td><a href="https://docs.google.com/document/d/1iP3XOMDjHljODZQKsTBg7JoiIV1QnYo9-63HAtXWqM0/edit#heading=h.s2up87ijss0x">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>9</td>
+		<td>Software Development</td>
+		<td><a href="https://docs.google.com/document/d/1LfhZ_Mln2cgZj4PAF9uq64wgbU9NIM73KX1oXSqEQiU/edit">Google Docs</a></td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>Computer Systems</td>
+		<td><a href="Chapter10.html">Chapter 10</a></td>
+	</tr>
+	<tr>
+		<td>11</td>
+		<td>Data Types</td>
+		<td><a href="Chapter11.html">Chapter 11</a></td>
+	</tr>
+	<tr>
+		<td>13</td>
+		<td>Data Structures</td>
+		<td><a href="Chapter13.html">Chapter 13</a></td>
+	</tr>
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("Grades");
+  switching = true;
+
+  dir = "asc"; 
+
+  while (switching) {
+
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+   
+      switchcount ++;      
+    } else {
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+</div>
+</body>
+</html>
