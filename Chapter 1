@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<script language='javascript'>
+function hide(){
+   document.getElementById('Decomposition').style.display = "none";
+   document.getElementById('Algorithms').style.display = "none";
+   document.getElementById('Abstraction').style.display = "none";
+   document.getElementById('Pattern_Recognition').style.display = "none";
+}
+</script>
+<title> Chapter 1 </title>
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="http://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body style="background-color:gray;">
+<div class="w3-row">
+	<div class="w3-col l12 w3-black w3-center"><h1>My Website</h1></div>
+</div>
+<div class="w3-row">
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="index.html"><p>Home</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray w3-center"><a href="App.html"><p>Projects</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Info.html"><p>Info</p></a></div>
+  <div class="w3-col l3 w3-gray w3-text-light-gray w3-hover-text-black w3-hover-light-gray  w3-center"><a href="Notes.html"><p>Notes</p></a></div>
+</div>
+<div class="w3-row">
+	<div class="w3-col l6 w3-black w3-center">
+		<h2> Computational Thinking </h2>
+		<h4> There are 4 elements of Computational Thinking: </h4>
+		<p onclick="w3.toggleShow('#Decomposition');w3.hide('#Algorithms');w3.hide('#Abstraction');w3.hide('#Pattern_Recognition')"> Decomposition</p>
+		<p onclick="w3.toggleShow('#Algorithms');w3.hide('#Decomposition');w3.hide('#Abstraction');w3.hide('#Pattern_Recognition')"> Algorithms</p>
+		<p onclick="w3.toggleShow('#Abstraction');w3.hide('#Algorithms');w3.hide('#Decomposition');w3.hide('#Pattern_Recognition')"> Abstraction</p>
+		<p onclick="w3.toggleShow('#Pattern_Recognition');w3.hide('#Abstraction');w3.hide('#Algorithms');w3.hide('#Decomposition')"> Pattern Recognition</p>
+		</div>
+	<div   id = "Decomposition" class="w3-col l6 w3-black w3-right"><h2>Decomposition</h2><p>Decomposition consists of breaking down a problem into smaller problems and solving those individual small problems. This helps when taking on a large task that may need multiple people to solve in time, each person would take one of the smaller task and put all the solutions together to solve the large task.</p></div>
+	<div   id = "Algorithms" class="w3-col l6 w3-black w3-right"><h2>Algorithms<p>hgfjhf</p></div>
+	<div   id = "Abstraction" class="w3-col l6 w3-black w3-right"><h2>Abstraction</h2><p>Abstraction means that all unneeded detail is eliminated. In most cases this is to save processing power while a program is running by reducing the detail of the program. For example in a driving simulator, it isn't necessary to have detailed buildings or birds and airplanes in the sky however it is essential to have real road design and road signs.</p></div>
+	<div   id = "Pattern_Recognition" class="w3-col l6 w3-black w3-right"><h2>Pattern Recognition</h2><p>dhgfydht</p></div>
+</div>
+<script>
+window.onload=hide ;
+</script>
+</body>
+</html>
